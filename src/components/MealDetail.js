@@ -28,6 +28,7 @@ function MealDetail (props){
         <p>{meal.meal}</p>
         <p>{meal.calories}</p>
         <p>{meal.date}</p>
+        <Link to={'/meals'}>Back</Link>
         <Link to={`/meals/${meal._id}/edit`}>Edit</Link>
       </div>
     )}

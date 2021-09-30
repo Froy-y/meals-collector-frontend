@@ -48,12 +48,11 @@ const MealList = (props) => {
                 <tbody>
                     { meals && meals.map (meal => (
                         <tr key={ meal._id }>
-                            <td>{ meal.name }</td>
+                            <Link to={ `/meals/${meal._id}` }><td>{ meal.name }</td></Link>
                             <td>{ meal.meal }</td>
                             <td>{ meal.calories }</td>
                             <td>{ meal.date.slice(0, 10) }</td>
                             <td onClick={()=> handleDelete(meal._id)}>X</td>
-                            <td><Link to={ `/meals/${meal._id}` }>Show Page</Link></td>
                         </tr>
                     )) }
                 </tbody>
