@@ -50,7 +50,7 @@ const App = () => {
       const deletedMeal = await fetch(`http://localhost:9000/meals/${id}`, config)
       const parsed = await deletedMeal.json()
       console.log("DELETED MEAL", parsed)
-      const updatedMeals = meals.filter(meal => meal._id != parsed._id)
+      const updatedMeals = meals.filter(meal => meal._id !== parsed._id)
       setMeals(updatedMeals)
     } catch (err) {
       console.log(err)
@@ -71,12 +71,12 @@ const App = () => {
         </thead>
         <tbody>
           { meals && meals.map(meal => (
-            <tr key= { meal._id }>
-              <td>{ meal._id }</td>
-              <td>{ meal.name }</td>
-              <td>{ meal.meal }</td>
-              <td>{ meal.calorie }</td>
-              <td>{ meal.date }</td>
+            <tr key= {meal._id}>
+              <td>{meal._id}</td>
+              <td>{meal.name}</td>
+              <td>{meal.meal}</td>
+              <td>{meal.calorie}</td>
+              <td>{meal.date}</td>
               <td onClick={() => handleDelete(meal._id)}>X</td>
             </tr>
           )) }

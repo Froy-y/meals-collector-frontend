@@ -21,7 +21,7 @@ const NewForm = (props) => {
     }
 
     return(
-        <div class="form-section">
+        <div className="form-section">
             <form onSubmit={ handleSubmit }>
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" value={ input.name } onChange={handleChange} />
