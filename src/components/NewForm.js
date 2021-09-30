@@ -31,6 +31,7 @@ const NewForm = (props) => {
                 <input id="calories" name="calories" value={ input.calories } onChange={handleChange} />
                 <label htmlFor="date">Date</label>
                 <input id="date" name="date" value={ input.date } onChange={handleChange} />
+                <br />
             </form>
         </div>
     )
