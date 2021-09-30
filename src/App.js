@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import NewForm from './components/NewForm'
 
+
 const App = () => {
   const [meals, setMeals] = useState('')
 
@@ -66,17 +67,16 @@ const App = () => {
         <thead>
           <th>Name</th>
           <th>Meals</th>
-          <th>Calorie</th>
+          <th>Calories</th>
           <th>Date</th>
         </thead>
         <tbody>
           { meals && meals.map(meal => (
             <tr key= {meal._id}>
-              <td>{meal._id}</td>
               <td>{meal.name}</td>
               <td>{meal.meal}</td>
-              <td>{meal.calorie}</td>
-              <td>{meal.date}</td>
+              <td>{meal.calories}</td>
+              <td>{meal.date.slice(0, 10)}</td>
               <td onClick={() => handleDelete(meal._id)}>X</td>
             </tr>
           )) }
