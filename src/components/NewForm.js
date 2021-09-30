@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
+import {Form, Button} from 'react-bootstrap'
 
 const NewForm = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -35,7 +36,7 @@ const NewForm = (props) => {
             console.log(err)
         }
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
         setInput(initialState)
@@ -44,18 +45,30 @@ const NewForm = (props) => {
 
     return(
         <div className="form-section">
-            <form onSubmit={ handleSubmit }>
-                <label htmlFor="name">Name</label>
-                <input id="name" name="name" value={ input.name } onChange={handleChange} />
-                <label htmlFor="meal">Meal Time</label>
-                <input id="meal" name="meal" value={ input.meal } onChange={handleChange} />
-                <label htmlFor="calories">Calories</label>
-                <input id="calories" name="calories" value={ input.calories } onChange={handleChange} />
-                <label htmlFor="date">Date</label>
-                <DatePicker id="date" name="date" value={input.date} selected={startDate} onChange={(date) => setStartDate(date)} />
-                <input type="submit" value="Add a meal" />
-            </form>
-            <Link to="/meals">View Meals</Link>
+
+          <Form onSubmit={ handleSubmit }>
+            <Form.Group className="mb-3" controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="What did you eat?" value={ input.name } onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="meal">
+              <Form.Label>Meal Time</Form.Label>
+              <Form.Control type="text" placeholder="Which meal?" value={ input.meal } onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="calories">
+              <Form.Label>Calories</Form.Label>
+              <Form.Control type="text" placeholder="How many calories?" value={ input.calories } onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="date">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="date" placeholder="When did you eat this?" value={ input.date } onChange={handleChange}/>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+            </Form>
+
+            <Link to="/meals">Back</Link>
         </div>
     )
 }
