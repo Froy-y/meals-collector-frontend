@@ -30,7 +30,7 @@ const App = () => {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
-          "Content Type": "application/json"
+          "Content-Type": "application/json"
         }
       }
       const createdMeal = await fetch("http://localhost:9000/meals", configs)
@@ -63,6 +63,7 @@ const App = () => {
     <div>
       <h1>Meal Counter!</h1>
       <NewForm addMeal={newMeals}/>
+      <br />
       <table>
         <thead>
           <th>Name</th>
