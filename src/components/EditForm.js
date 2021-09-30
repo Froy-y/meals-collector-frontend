@@ -21,7 +21,7 @@ const EditForm = (props) => {
             props.history.push('/meals')
         }
     }
-    
+
     const updateMeal = async (id, data) => {
         const configs = {
             method: "PUT",
@@ -32,7 +32,7 @@ const EditForm = (props) => {
         }
         const updateMeal = await fetch(`http://localhost:9000/meals/${id}`, configs)
         const parsed = await updateMeal.json()
-        props.history.push(`/holidays/${id}`)
+        props.history.push(`/meals/${id}`)
     }
 
     const handleSubmit = async (e) => {
