@@ -39,7 +39,6 @@ const NewForm = (props) => {
                 <input id="calories" name="calories" value={ input.calories } onChange={handleChange} />
                 <label htmlFor="date">Date</label>
                 <DatePicker id="date" name="date" value={input.date} selected={startDate} onChange={(date) => setStartDate(date)} />
-
                 <input type="submit" value="Add a meal" />
             </form>
         </div>

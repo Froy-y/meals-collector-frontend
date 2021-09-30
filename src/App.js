@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import NewForm from './components/NewForm'
 
-
 const App = () => {
   const [meals, setMeals] = useState('')
 
