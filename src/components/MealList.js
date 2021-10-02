@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Backspace } from "react-bootstrap-icons"
+import { Button } from 'react-bootstrap';
+
 
 const MealList = (props) => {
     const [meals, setMeals] = useState([])
@@ -35,8 +38,8 @@ const MealList = (props) => {
     }, []);
 
     return(
-        <div>
-            <table>
+        <div className="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -52,12 +55,13 @@ const MealList = (props) => {
                             <td>{ meal.meal }</td>
                             <td>{ meal.calories }</td>
                             <td>{ meal.date.slice(0, 10) }</td>
-                            <td onClick={()=> handleDelete(meal._id)}>X</td>
+                            <td onClick={()=> handleDelete(meal._id)}><Backspace /></td>
                         </tr>
                     )) }
                 </tbody>
             </table>
-            <Link to="/meals/new">Create New Meal</Link>
+            <Link to="/meals/new"> <Button variant="outline-dark">Add Meal</Button>
+            </Link>
         </div>
     )
 

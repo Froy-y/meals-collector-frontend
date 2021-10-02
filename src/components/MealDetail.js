@@ -23,8 +23,7 @@ function MealDetail (props){
     <>
     { loading ? (<h3><em>Loading...</em></h3>) : (
       <div>
-        <h1>Detail Page for {currentId}</h1>
-        <p>{meal.name}</p>
+        <h1>{meal.name}</h1>
         <p>{meal.meal}</p>
         <p>{meal.calories}</p>
         <p>{meal.date}</p>

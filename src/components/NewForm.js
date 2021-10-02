@@ -44,7 +44,7 @@ const NewForm = (props) => {
     }
 
     return(
-        <div className="form-section">
+        <div className="form">
 
           <Form onSubmit={ handleSubmit }>
             <Form.Group className="mb-3" controlId="name">
@@ -60,15 +60,19 @@ const NewForm = (props) => {
               <Form.Control type="text" placeholder="How many calories?" value={ input.calories } onChange={handleChange} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="date">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Date</Form.Label>
               <Form.Control type="date" placeholder="When did you eat this?" value={ input.date } onChange={handleChange}/>
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className="form-buttons">
+              <Link to="/meals">
+                <Button variant="secondary">Back
+                </Button>
+              </Link> 
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+          </div>
             </Form>
-
-            <Link to="/meals">Back</Link>
         </div>
     )
 }
